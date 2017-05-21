@@ -100,3 +100,5 @@ disqus:
 duoshuo:
   config: false
   id: zhanxin
+
+theme: jekyll-theme-leap-day

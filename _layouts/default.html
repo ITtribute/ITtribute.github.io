@@ -16,7 +16,7 @@
             {{ page.title }}
         {% else %}
             {{ site.title }}
-        {% endif %}         
+        {% endif %}
     </title>
     <meta name="generator" content="Jekyll" />
     <meta name="author" content="{{ site.author.name }}" />
@@ -24,10 +24,10 @@
     <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- //页面样式 -->
-    <link rel="stylesheet" href="{{ site.url }}{{ site.themes }}/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="{{ site.url }}{{ site.themes }}/images/favicon.ico" type="image/x-icon" />
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -67,15 +67,15 @@
                     {% for link in site.follow %}
                     <a class="follow" href="{{ link.url }}" target="_blank"><i class="fa {{ link.class }}"></i></a>
                     {% endfor %}
-                    <p class="text">© 2013 Violet Jekyll Theme.Design by <a href="http://www.zhanxin.info">zhanxin.lin</a></p>
+                    <p class="text">© 2013 Violet Jekyll Theme.Design by <a href="//www.zhanxin.info">zhanxin.lin</a></p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/jquery-scrollTo.js"></script>
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/common.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery-scrollTo.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
         var headImgArr = [];
         {% for imgsrc in site.headimg %}
@@ -98,7 +98,7 @@
             var disqus_shortname = '{{ site.disqus.id }}';
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] ||
                     document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
@@ -110,7 +110,7 @@
                 (function() {
                     var ds = document.createElement('script');
                     ds.type = 'text/javascript';ds.async = true;
-                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.src = '//static.duoshuo.com/embed.js';
                     ds.charset = 'UTF-8';
                     (document.getElementsByTagName('head')[0]
                     || document.getElementsByTagName('body')[0]).appendChild(ds);

@@ -1,13 +1,13 @@
 /** 
  * @name: 		ColorCode
  * @descript:	1, base on DlHightlight(Mihai Bazon, http://mihai.bazon.net/blog)
- * 				2, fix IE bug 
+ * 				2, fix IE bug
  * 				3, set more for lang-css.js
  * 				4, change the style
  * @author:     pizn( zhanxin.lin , http://pizn.net)
  * @other:      Thanks to Mihai Bazon's DlHghtlight.
  **/
- 
+
 /**
  * @name:	base DlHighlight
  * @author: Mihai Bazon
@@ -325,7 +325,7 @@ var DlHighlight;
  * @name:	lang-xml
  * @author: Mihai Bazon
  */
- 
+
  (function(){
 
 	var H = DlHighlight;
@@ -483,7 +483,7 @@ var DlHighlight;
  * @name:	lang-js
  * @author: Mihai Bazon
  */
- 
+
 (function(){
 
 	var builtins = [
@@ -733,10 +733,10 @@ var DlHighlight;
 			if (txt.charAt(0) == "/" && txt.charAt(1) == "/") {
 				var nl = txt.indexOf("\n");
 				if (nl == -1)
-					nl = txt.length;								
+					nl = txt.length;
 				var c = this.lang.onComment.call(this, this._he(txt.substring(2, nl)));
-				
-				// when "//" has ")" and ";" don't be c style			
+
+				// when "//" has ")" and ";" don't be c style
 				var d = c.indexOf(";"), e = c.indexOf(")");
 				if (d == -1 || e == -1) {
 					return {
@@ -746,12 +746,12 @@ var DlHighlight;
 						index	: nl,
 						before	: "//"
 					};
-				}				
-			}						
+				}
+			}
 		},
-		
+
 		OUTBLOCK_STUFF : function(txt) {
-			if (!this.cssBlock) {	
+			if (!this.cssBlock) {
 				// for id and clss
 				var m = /^([.#:])([a-z0-9_-]+)/i.exec(txt);
 				if (m) return {
@@ -760,7 +760,7 @@ var DlHighlight;
 					index   : m[0].length,
 					style   : outblock_stuff[m[1]]
 				};
-				
+
 				// for element
 				var m = /^([a-z0-9]+)(\s*)/i.exec(txt);
 				//console.log(m);
@@ -769,7 +769,7 @@ var DlHighlight;
 					index   : m[0].length,
 					style   : 'css-element'
 				};
-				
+
 				// for ","
 				if (txt.charAt(0) == ",") return {
 					content	: ",",
@@ -788,8 +788,8 @@ var DlHighlight;
 					after   : m[2],
 					style   : "css-keyword",
 					index   : m[0].length
-				};			
-				
+				};
+
 				// color
 				m = /^#(([a-f0-9][a-f0-9][a-f0-9]){1,2})/i.exec(txt);
 				if (m) return {
@@ -807,7 +807,7 @@ var DlHighlight;
 					style   : "css-length",
 					index   : m[0].length
 				};
-				
+
 				// word
 				var n = /^([a-z0-9_-]+)(\s*\b)/i.exec(txt);
 				if (n) return {
@@ -815,7 +815,7 @@ var DlHighlight;
 					style   : "css-attribute",
 					index   : n[0].lenght
 				};
-				
+
 				// ","
 				var d = /^(\,)/i.exec(txt);
 				if (d) return {
@@ -823,8 +823,8 @@ var DlHighlight;
 					style   : "css-length",
 					index   : d[0].length
 				}
-				
-				// the end 
+
+				// the end
 				m = /^\;/i.exec(txt);
 				if (m) return {
 					content : m[0],
@@ -833,9 +833,9 @@ var DlHighlight;
 				};
 			}
 		},
-		
+
 		URL: function(txt) {
-		
+
 			// "url"
 			var u = /^url/i.exec(txt);
 			if (u) return {
@@ -843,7 +843,7 @@ var DlHighlight;
 				style   : "css-url",
 				index   : u[0].length
 			};
-			
+
 			// "../" "./" "."
 			if(this.cssBrack) {
 				var t = /^([\.\.]|[\.\.\/]|[\.\/]|[\.]+)(\s*)/i.exec(txt);
@@ -866,7 +866,7 @@ var DlHighlight;
 				};
 			}
 		},
-		
+
 		END_BRACK : function(txt) {
 			if (/^\)/.test(txt)) {
 				this.cssBrack--;
@@ -877,7 +877,7 @@ var DlHighlight;
 				};
 			}
 		},
-		
+
 		BEGIN_BLOCK : function(txt) {
 			if (/^\{/.test(txt)) {
 				this.cssBlock++;
@@ -906,7 +906,7 @@ var DlHighlight;
 
 	var H = DlHighlight;
 	var lang = H.registerLang(
-		"css", [ H.BASE.COMMENT_C, 
+		"css", [ H.BASE.COMMENT_C,
 			 H.BASE.STRING,
 			 T.COMMENT_CPP,
 			 T.AT_RULE,
@@ -964,34 +964,34 @@ var DlHighlight;
 			for (var i = a.length; --i >= 0;) {
 				var el = a[i];
 				if (el.getAttribute("name") == name) {
-				
+
 					var code = el._msh_text || getText(el);
 					el._msh_text = code;
 					args.lang = el._msh_type || el.className;
-					
-					el._msh_type = args.lang;	
-					
-					// 解决 IE 下的 bug				
+
+					el._msh_type = args.lang;
+
+					// 解决 IE 下的 bug
 					if (!DlHighlight.is_ie) {
 						args.lineNumbers = bubbles;
 					}
-					
+
 					var hl = new DlHighlight(args);
-					
-					code = hl.doItNow(code);		
-					if (DlHighlight.is_ie) {		
+
+					code = hl.doItNow(code);
+					if (DlHighlight.is_ie) {
 						// kills whitespace
 						var div = document.createElement("div");
-						div.innerHTML = "<pre>" + code + "</pre>";						
+						div.innerHTML = "<pre>" + code + "</pre>";
 						while (div.firstChild) {
 							// remove the code
 							el.removeChild(el.firstChild);
 							// append the new style code
 							el.appendChild(div.firstChild);
 						}
-				
-					} else {	
-						el.innerHTML = code;					
+
+					} else {
+						el.innerHTML = code;
 					}
 					el.className = "DlHighlight " + el.className;
 				}

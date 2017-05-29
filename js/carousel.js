@@ -39,7 +39,7 @@ if (typeof Object.create !== 'function') {
 		init: function(el, options) {
 			if (!el.length) {return false;}
 			this.options = $.extend({}, this.settings, options);
-			this.itemIndex = 0;
+			this.itemIndex = 0;	
 			this.container = el;
 			this.runner = this.container.find('ul');
 			this.items = this.runner.children('li');
@@ -116,7 +116,7 @@ if (typeof Object.create !== 'function') {
 						.removeClass('disabled');
 				if (this.itemIndex === (this.noOfItems - this.options.itemsPerPage)) {
 					this.nextLink.addClass('disabled');
-				}
+				} 
 				else if (this.itemIndex === 0) {
 					this.prevLink.addClass('disabled');
 				}

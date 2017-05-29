@@ -25,16 +25,16 @@ var violet = violet || {
         function show() {
             banner.append(a);
         }
-        setTimeout(show, b);
+        setTimeout(show, b);    
     },
     selfPhoto: function() {
         var ran = 1, faceImg;
         function getRandom(n){
             ran = Math.floor(Math.random()*n+1);
         }
-        getRandom("11");
+        getRandom("11");    
         faceImg = $("#J_myFace");
-        if (faceImg.children()[0]) {
+        if (faceImg.children()[0]) {        
             switch(ran) {
                 case 1:
                     faceImg.children()[0].src = '/images/face/iampizn-2.png';
@@ -63,15 +63,15 @@ var violet = violet || {
                 case 9:
                     faceImg.children()[0].src = '/images/face/iampizn-10.png';
                     break;
-                case 10:
+                case 10: 
                     faceImg.children()[0].src = '/images/face/iampizn-11.png';
                     break;
                 case 11:
                     faceImg.children()[0].src = '/images/face/iampizn-1.png';
-                    break;
+                    break;          
                 default:
-                    break;
-            }
+                    break;      
+            }   
         }
     },
     highLightMenu: function() {
@@ -87,7 +87,7 @@ var violet = violet || {
             if(cur != navs[0].href) {
                 navs[0].className = "";
             }
-        }
+        }       
     },
     getGitHub: function(name, num, id) {
         var user, url, loading, repo_name, repo_url, repo_desc, repo_watch, repo_fork, repo_len, i, meta, status, errmsg;
@@ -118,7 +118,7 @@ var violet = violet || {
                                        <p class="descript">' + repo_desc + '</p>\
                                        </article>';
                             $(id).append(project);
-                        }
+                        }   
                     } else {
                         for( i = 0; i < num; i++){
                             repo_name = data.data[i].name;
@@ -201,7 +201,7 @@ violet.goTop = {
 }
 $(document).ready(function(){
     //violet.checkViolet();
-    //highLightMenu
+    //highLightMenu    
     violet.highLightMenu();
     violet.goTop.run();
     //selfPhoto
@@ -213,15 +213,15 @@ $(document).ready(function(){
         function(){
             $(this).removeClass('v-my-face-hover');
         });
-    showSelfPhoto.toggle(function() {
+    showSelfPhoto.toggle(function() { 
         if($("#J_myFace_img").hasClass('flipInYR')) {
             $("#J_myFace_img").removeClass('flipInYR');
-        }
+        }       
         $("#J_myFace_img").addClass('flipInYL');
         if($(this).hasClass('v-my-face-hover')){
                 $(this).removeClass('v-my-face-hover');
-            }
-            violet.selfPhoto();
+            }       
+            violet.selfPhoto();     
         },
         function() {
             if($("#J_myFace_img").hasClass('flipInYL')) {
@@ -231,7 +231,7 @@ $(document).ready(function(){
             if($(this).hasClass('v-my-face-hover')){
                 $(this).removeClass('v-my-face-hover');
             }
-            violet.selfPhoto();
+            violet.selfPhoto(); 
         }
     );
 })

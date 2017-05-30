@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  
-  
-    
+
+
+
     <entry>
-      <title><![CDATA[关于 xbin-store 的一些声明!]]></title>
+      <title><![CDATA[关于 Tribute 的一些声明!]]></title>
       <url>http://binux.cn/2017/05/08/xbin-store/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>“简单谈谈 xbin-store ”</p>
@@ -33,24 +33,24 @@
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 随记 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> 随记 </tag>
-            
+
             <tag> xbin-store </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[CentOS 7下 Docker 安装]]></title>
       <url>http://binux.cn/2017/05/08/Docker-Instal/</url>
@@ -107,24 +107,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://dcos.io/docs/1.7/administration/installing/custom/system-requirements/install-docker-centos/" target="_blank" rel="external">https://dcos.io/docs/1.7/administration/installing/custom/system-requirements/install-docker-centos/</a></p>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Docker </tag>
-            
+
             <tag> Linux </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[使用 Lombok 减少 Java Bean 代码]]></title>
       <url>http://binux.cn/2017/04/16/Lombok/</url>
@@ -234,22 +234,22 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 工具 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Lombok </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(四) HashSet源码分析]]></title>
       <url>http://binux.cn/2017/03/16/HastSet-Source-Code/</url>
@@ -373,24 +373,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Spring Framework实现源码分析(一) 源码阅读环境搭建]]></title>
       <url>http://binux.cn/2017/03/15/Spring-Framework/</url>
@@ -470,24 +470,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Source Code </tag>
-            
+
             <tag> Spring </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(四) HashMap源码分析]]></title>
       <url>http://binux.cn/2017/03/14/HastMap-Source-Code/</url>
@@ -845,24 +845,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(三) Stack源码分析]]></title>
       <url>http://binux.cn/2017/03/13/Stack-Source-Code/</url>
@@ -913,24 +913,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Hello Hexo]]></title>
       <url>http://binux.cn/2017/03/12/Hello-Hexo/</url>
@@ -950,22 +950,22 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 随记 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Hexo </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(三) LinkedList源码分析]]></title>
       <url>http://binux.cn/2017/03/11/LinkedList-Source-Code/</url>
@@ -1195,24 +1195,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(二) Vector源码分析]]></title>
       <url>http://binux.cn/2017/03/09/Vector-Source-Code/</url>
@@ -1512,24 +1512,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Alibaba 2018实习生招聘 在线编程题解答]]></title>
       <url>http://binux.cn/2017/03/09/Alibaba-Arithmetic/</url>
@@ -1638,24 +1638,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 面试题 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Alibaba </tag>
-            
+
             <tag> Arithmetic </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[JDK底层实现源码分析系列(一) ArrayList源码分析]]></title>
       <url>http://binux.cn/2017/03/09/ArrayList-Source-Code/</url>
@@ -2180,24 +2180,24 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 源码分析 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> JDK </tag>
-            
+
             <tag> Source Code </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七)]]></title>
       <url>http://binux.cn/2017/03/07/RocketMQ-Cluster-Install/</url>
@@ -2422,26 +2422,26 @@ jps
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> RocketMQ </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 Solr集群安装(六)]]></title>
       <url>http://binux.cn/2017/03/06/Solr-Cluster-Install/</url>
@@ -2625,26 +2625,26 @@ jps
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> Solr </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 FastDFS安装(五)]]></title>
       <url>http://binux.cn/2017/03/05/FastDFS-Install/</url>
@@ -2691,7 +2691,7 @@ jps
 <p>在学习时可以不用考虑防火墙的问题</p>
 </blockquote>
 <hr>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装libfastcommon"><a href="#安装libfastcommon" class="headerlink" title="安装libfastcommon"></a>安装libfastcommon</h3><pre><code>./make.sh 
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装libfastcommon"><a href="#安装libfastcommon" class="headerlink" title="安装libfastcommon"></a>安装libfastcommon</h3><pre><code>./make.sh
 ./make.sh install
 mkdir -p /usr/lib64
 install -m 755 libfastcommon.so /usr/lib64
@@ -3135,26 +3135,26 @@ location ~/group([0-9])/M00 {
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> FastDFS </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 Nginx安装(四)]]></title>
       <url>http://binux.cn/2017/03/04/Nginx-Install/</url>
@@ -3387,26 +3387,26 @@ http <span class="token punctuation">{</span>
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> Nginx </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 Zookeeper集群安装(三)]]></title>
       <url>http://binux.cn/2017/03/04/Zookeeper-Cluster-Install/</url>
@@ -3567,26 +3567,26 @@ vim /etc/sysconfig/iptables
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> Zookeeper </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 Redis集群安装(二)]]></title>
       <url>http://binux.cn/2017/03/03/Redis-Cluster-Install/</url>
@@ -4057,26 +4057,26 @@ Connecting to node 192.168.1.171:7003: OK
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> Redis </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[解决Java程序连接不上MySQL 但是Navicat可以连接的问题!]]></title>
       <url>http://binux.cn/2017/03/02/Mac-MySQL-Error/</url>
@@ -4183,24 +4183,24 @@ password=&quot;**密码**&quot;
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> Bug </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> MySQL </tag>
-            
+
             <tag> Bug </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Xbin-Store(分布式商城)项目所用Linux服务系列 MySQL安装(一)]]></title>
       <url>http://binux.cn/2017/03/01/Linux-MySQL-Install/</url>
@@ -4289,26 +4289,26 @@ root      2438  1573  0 11:30 pts/1    00:00:00 grep mysql
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 安装教程 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> Linux </tag>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> MySQL </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[完美解决Mac下Navicat Premium连接MySQL5.7中文乱码！！！]]></title>
       <url>http://binux.cn/2017/02/27/Mac-MySQL-Garbled/</url>
@@ -4368,24 +4368,24 @@ character-set-server=utf8</code><br>重新启动MySQL服务<br><br>打开Navicat
 <hr>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> Bug </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> MySQL </tag>
-            
+
             <tag> Mac </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[List.remove()无效!!!]]></title>
       <url>http://binux.cn/2017/02/26/List.remove()/</url>
@@ -4497,26 +4497,26 @@ public XbinResult decreOrIncre(Long pid, Integer pcount, Integer type, Integer i
 <p>最后我直接把这两句全注释了 解决了问题。</p>
 <h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> Bug </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> XBin-Store </tag>
-            
+
             <tag> Bug </tag>
-            
+
             <tag> Java </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
+
     <entry>
       <title><![CDATA[Hello Blog]]></title>
       <url>http://binux.cn/2017/02/23/hello-Blog/</url>
@@ -4527,22 +4527,22 @@ public XbinResult decreOrIncre(Long pid, Integer pcount, Integer type, Integer i
 <p>以后会多多写些Blog 以前都是自己随便记录些笔记。</p>
 <p>无意了解到 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a><br>通过<a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a> 可以快速 Building Blog</p>
 ]]></content>
-      
+
         <categories>
-            
+
             <category> 随记 </category>
-            
+
         </categories>
-        
-        
+
+
         <tags>
-            
+
             <tag> 随记 </tag>
-            
+
         </tags>
-        
+
     </entry>
-    
-  
-  
+
+
+
 </search>

@@ -31,7 +31,7 @@
 <h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>希望 xbin-store、xbin-store-cloud 可以一直完善下去 奔着 写个 JD 的目标 大步前进</p>
 <p>最后祝大家 Enjoy Coding</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -105,7 +105,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>接下来 开始愉快的 Docker 之旅吧！</p>
 <hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://dcos.io/docs/1.7/administration/installing/custom/system-requirements/install-docker-centos/" target="_blank" rel="external">https://dcos.io/docs/1.7/administration/installing/custom/system-requirements/install-docker-centos/</a></p>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -196,7 +196,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><p>被修饰的会加<code>final</code>、<code>@ToString</code>、<code>@EqualsAndHashCode</code>、<code>@AllArgsConstructor</code>、<code>@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)</code>、<code>@Getter</code></p>
 <p>可以修饰的对象为: TYPE(类、接口(包括注解类型)、enum)</p>
 <h4 id="Builder"><a href="#Builder" class="headerlink" title="@Builder"></a>@Builder</h4><p>生成一个内部类<code>BuilderExampleBuilder</code>可以使用链式编程创建对象。</p>
-<p>如:Person.builder().name(“Binux”).city(“NanJing.”).build();</p>
+<p>如:Person.builder().name(“Tribute”).city(“NanJing.”).build();</p>
 <p>可以修饰的对象为: TYPE(类、接口(包括注解类型)、enum),CONSTRUCTOR(构造器),METHOD(方法)</p>
 <h4 id="SneakyThrows"><a href="#SneakyThrows" class="headerlink" title="@SneakyThrows"></a>@SneakyThrows</h4><p>对修饰对象进行<code>try-catch</code> value为<code>Throwable&gt;[] value()</code> 可以声明异常类型</p>
 <p>可以修饰的对象为: CONSTRUCTOR(构造器),METHOD(方法)</p>
@@ -232,7 +232,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>lombok 解决了成员类型修改后 还需重新生成getXxx/setXxx()/toString()等方法的问题，还是很实用的。</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -371,7 +371,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>HashSet的实现算是简单的,原因在于他直接使用了HashMap做底层存储,HashMap算比较复杂的集合,踩着巨人的肩膀,</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -468,7 +468,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>源码环境搭建完成 接下来就开始Spring源码的阅读之旅吧!</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -843,7 +843,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <p>HashMap的计算index值使用的优化取余操作可以应用到其他场景</p>
 <p>JDk1.8对于HashMap进行了重构,在单个链表节点大于8时会转换成红黑树来存储,大大提高了大量数据查找时的速度,有时间会去仔细研究下</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -911,7 +911,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <p>在选择使用哪个的时候看是否需要频繁的删除或插入指定index的数据</p>
 <p>如果频繁那只能选择LinkedList,反之一定得选择Stack,底层的存储数据的结构不同导致他们的使用场景都各有优势</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -948,7 +948,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <p>继续看我的源码去了</p>
 <p>不想去BAT的程序猿都不是好程序猿 ^-^</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -1193,7 +1193,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>LinkedList本质上就是一个双向链表，不会像ArrayList那样，空间不足时去扩容(array copy是一件效率非常低的操作)这样做的好处就是处理大量数据时，存储数据的时间比ArrayList要低很多。</p>
 <p>另外LinkedList实现了Deque接口，可以通过内部,实现FIFO(先进先出)的队列或者LIFO(后进先出)的栈</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -1510,7 +1510,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <p>由于加了synchronized 导致Vector比ArrayList的性能低很多</p>
 <p>而且Vector的默认扩容是2倍 ArrayList为1.5倍</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -1636,7 +1636,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这道算法题 不是太难 毕竟是招实习生</p>
 <p>并且阿里还说了 这道题目并不会影响最后的录用 只是作为一个参考</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -2178,7 +2178,7 @@ ExecStart<span class="token operator">=</span>/usr/bin/dockerd <span class="toke
 <p>就像System.arraycopy()的参数 说实话我真没怎么用过 自己也是查API 看他是怎么实现的</p>
 <p>下一个会看Vector的源码 我所了解的 他们俩这是一个线程安全一个不安全 其他还有什么不一样就不知道了</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -2420,7 +2420,7 @@ jps
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然RocketMQ开源的是被阉割版 但是现在项目已经捐献给Apache了 现在已经发布了4.0 相信这款消息中间件以后一定会大放光彩</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -2623,7 +2623,7 @@ jps
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>solr 主要是用来搜索的 不需要自己在另外写 集群的安装也不算太麻烦 就是机器用的多了点 要7台虚拟机 实在没有这么多虚拟机的可以在一台机器搭伪分布式</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -3133,7 +3133,7 @@ location ~/group([0-9])/M00 {
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>FastDFS的安装算是比较麻烦的 不过按照本篇 一步一步来 是绝对可以安装成功的 集群的安装就更麻烦了 个人暂时用不到 就不安装了</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -3385,7 +3385,7 @@ http <span class="token punctuation">{</span>
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇介绍了Nginx的安装 非常简单 下面会写篇介绍Nginx负载均衡和高可用的博客</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -3565,7 +3565,7 @@ vim /etc/sysconfig/iptables
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>安装集群的时候一定要把防火墙配置好 不然就会出现各种问题 或者直接把防火墙关了吧 学习技术的时候可以不用考虑防火墙</p>
 <p>后面会写一篇关于使用ZkClient、Curator操作Zookeeper的博客</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4055,7 +4055,7 @@ Connecting to node 192.168.1.171:7003: OK
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇只是讲了Redis集群的搭建和集群的基本操作 想深入了解的 建议自己买本书来看看 比如<a href="https://www.amazon.cn/Redis/dp/B00L4XHH0S/ref=tmm_pap_swatch_0?_encoding=UTF8&amp;qid=1488619617&amp;sr=8-2" target="_blank" rel="external">Redis设计与实现</a>、<a href="https://www.amazon.cn/图书/dp/B016YLS2LM/ref=sr_1_1?ie=UTF8&amp;qid=1488619617&amp;sr=8-1&amp;keywords=redis" target="_blank" rel="external">Redis实战</a>等</p>
 <p>安装如有问题 可以在下方评论 我会尽我所能的帮你解决一些问题。</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4181,7 +4181,7 @@ password=&quot;**密码**&quot;
 <p>我是栽在最后一条Proxy 想到了Firewall 却忘记他了 程序员翻个墙看看外面的世界 这是一件很正常的事 个人感觉Google甩Baidu一个地球到月球的距离 我就是由于开着小飞机(Shadowsocks) 嫌网速卡 切换到全局模式 然后就让我郁闷了3天。</p>
 <p>改成自动模式 解决问题..</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4287,7 +4287,7 @@ root      2438  1573  0 11:30 pts/1    00:00:00 grep mysql
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MySQL安装还是很简单的。</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4366,7 +4366,7 @@ character-set-server=utf8</code><br>重新启动MySQL服务<br><br>打开Navicat
 <center><img src="http://on2bs9q7q.bkt.clouddn.com/Mac-MySQL-img5.png" alt="Edit DataBase"></center>
 
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4495,7 +4495,7 @@ public XbinResult decreOrIncre(Long pid, Integer pcount, Integer type, Integer i
 //cartInfoList.add(index, cartInfo);
 </code></pre>
 <p>最后我直接把这两句全注释了 解决了问题。</p>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
 ]]></content>
 
         <categories>
@@ -4523,7 +4523,7 @@ public XbinResult decreOrIncre(Long pid, Integer pcount, Integer type, Integer i
       <content type="html"><![CDATA[<blockquote>
 <p>“加油！！！ ”</p>
 </blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>Binux Blog 开通了。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>Tribute Blog 开通了。</p>
 <p>以后会多多写些Blog 以前都是自己随便记录些笔记。</p>
 <p>无意了解到 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a><br>通过<a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a> 可以快速 Building Blog</p>
 ]]></content>

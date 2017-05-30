@@ -64,7 +64,7 @@
     <meta name="apple-mobile-web-app-title" content="Tribute Blog">
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://binux.cn">
+    <meta property="og:url" content="http://xuanmings.github.io">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="JDK底层实现源码分析系列(三) Stack源码分析 | Tribute Blog">
     <meta property="og:description" content="一名正在崛起的Java后端工程师">
@@ -381,7 +381,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JDK底层实现源码分析系列(三) Stack源码分析&url=http://binux.cn//2017/03/13/Stack-Source-Code/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JDK底层实现源码分析系列(三) Stack源码分析&url=http://xuanmings.github.io//2017/03/13/Stack-Source-Code/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -396,7 +396,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://binux.cn//2017/03/13/Stack-Source-Code/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://xuanmings.github.io//2017/03/13/Stack-Source-Code/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -408,7 +408,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Tribute Blog&title=JDK底层实现源码分析系列(三) Stack源码分析&summary=一名正在崛起的Java后端工程师&pics=http://binux.cnhttp://on2bs9q7q.bkt.clouddn.com/avatar.png&url=http://binux.cn/2017/03/13/Stack-Source-Code/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Tribute Blog&title=JDK底层实现源码分析系列(三) Stack源码分析&summary=一名正在崛起的Java后端工程师&pics=http://xuanmings.github.iohttp://on2bs9q7q.bkt.clouddn.com/avatar.png&url=http://xuanmings.github.io/2017/03/13/Stack-Source-Code/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -442,7 +442,7 @@
 
 <hr>
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Stack从字面上理解就是栈,先进后出,继承Vector也就是说他完全可以当做Vector使用,并且他内部只增加了5个方法用来实现栈的特性</p>
-<p>之前已经讲过<a href="http://binux.cn/2017/03/09/Vector-Source-Code/">Vector的源码分析</a>了,本篇就只讲讲他是如何实现先进后出的</p>
+<p>之前已经讲过<a href="http://xuanmings.github.io/2017/03/09/Vector-Source-Code/">Vector的源码分析</a>了,本篇就只讲讲他是如何实现先进后出的</p>
 <ul>
 <li>public boolean empty()</li>
 <li>public synchronized E peek()</li>
@@ -471,7 +471,7 @@
 <p>在选择使用哪个的时候看是否需要频繁的删除或插入指定index的数据</p>
 <p>如果频繁那只能选择LinkedList,反之一定得选择Stack,底层的存储数据的结构不同导致他们的使用场景都各有优势</p>
 <hr>
-<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Tribute Blog</a>，转载请保留以上链接</p>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://xuanmings.github.io">Tribute Blog</a>，转载请保留以上链接</p>
 
     
 

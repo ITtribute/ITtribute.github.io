@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七) | 
+        
+        Binux Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+        <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+    
+    
+        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+    
+    
+        <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Binux">
+    <meta name="description" content="一名正在崛起的Java后端工程师">
+    <meta name="keywords" content="null,Linux,XBin-Store,RocketMQ">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="http://on2bs9q7q.bkt.clouddn.com/avatar.png">
+    <link rel="icon" sizes="192x192" href="http://on2bs9q7q.bkt.clouddn.com/favicon.png">
+    <link rel="apple-touch-icon" href="http://on2bs9q7q.bkt.clouddn.com/favicon.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Binux Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://binux.cn">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七) | Binux Blog">
+    <meta property="og:description" content="一名正在崛起的Java后端工程师">
+    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="XBin-Store"> <meta property="og:article:tag" content="RocketMQ"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+    <!-- Baidu Analytics -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {var hm = document.createElement('script');
+        hm.src = 'https://hm.baidu.com/hm.js?c286c0c5e31950b803d5d56c74493f58';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+
+    
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-92760839-1', 'auto');ga('send', 'pageview');
+    </script>
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系列"><span class="post-toc-number">1.</span> <span class="post-toc-text">系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#所用虚拟机"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">所用虚拟机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IP"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">IP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载软件"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">下载软件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">3.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-4台同时"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装(4台同时)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装JDK-略"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">安装JDK 略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解压"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">解压</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建存储路径"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">创建存储路径</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置RocketMQ配置文件"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">配置RocketMQ配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">3.1.4.1.</span> <span class="post-toc-text">配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改日志配置文件"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">修改日志配置文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改启动脚本参数（测试时虚拟机内存不够修改）"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">修改启动脚本参数（测试时虚拟机内存不够修改）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#启动NameServer"><span class="post-toc-number">3.1.7.</span> <span class="post-toc-text">启动NameServer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#查看是否启动成功"><span class="post-toc-number">3.1.7.1.</span> <span class="post-toc-text">查看是否启动成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#启动BrokerServer-多Master多Slave模式，异步复制"><span class="post-toc-number">3.1.8.</span> <span class="post-toc-text">启动BrokerServer 多Master多Slave模式，异步复制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Tomcat配置RocketMQ-Console"><span class="post-toc-number">3.1.9.</span> <span class="post-toc-text">安装Tomcat配置RocketMQ Console</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#启动："><span class="post-toc-number">3.1.9.1.</span> <span class="post-toc-text">启动：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#防火墙配置："><span class="post-toc-number">3.1.10.</span> <span class="post-toc-text">防火墙配置：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#著作权声明"><span class="post-toc-number">5.</span> <span class="post-toc-text">著作权声明</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://on2bs9q7q.bkt.clouddn.com/Linux-RocketMQ-blog.png)">
+    
+            <p class="article-headline-p">
+                Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://on2bs9q7q.bkt.clouddn.com/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Binux</strong>
+        <span>3月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3aS24jMQwFQN//0pPtAInj9yi13DGqV0HcH5UWIkHy8e+jrwceHh4eHh4eHt7NeI/4+v7UD69+cuf//589W6wNDw8P7wjvxVEbLPr3ZX1/T7Jxw7Xh4eHhHeS1y8rvz4/7lbXh4eHh3Z+XBIMZGA8PD+9TeW3KmwSD28U9PDw8vOVixOxY31VouLzWgoeHhxfz8ibT+b+P9vfw8PDwAl490vQEnKe/bWK9NHSFh4eHdwFv9vm2mJu/bX078PDw8M7whgXTsjH2e4kh/yIeHh7eHXhJAj0LD21Jtx3AwsPDwzvPKw7cMlFONms9WcfDw8N7F2+W7L44oMvhqpZdBAY8PDy8rbx2ECoPG7OCRYJ88TY8PDy8g7ycPRvVWvlWEZDw8PDwLuYlRdXk/hyTPzUrfODh4eGd5CWJbNvyHw5OBW94Gkjw8PDw3sqbtf9Xjv62fIyHh4d3nte2mvJF5wWIvEwclTbw8PDwjvBmDf5Zep23zdqQgIeHh3eSlyTWeVFgVs6YrQoPDw/vvbyVkYL1rdk2aoCHh4d3nJcfwbNy8MpWbpgpw8PDw7uMtxIe8qUnwwr1r3h4eHgHeXl6XRcI8mM9HtKqRwfw8PDwNvHaa9bQ2pAo56EIDw8P72LeI77yhbbUtqm2NBmBh4eHt4nXBoOVMYJ8g9phAjw8PLzzvHy5bfl1PclOvoiHh4d3Z16eNLetr3ZVeHh4eH+F1ybWsyGDYYEDDw8P7yAvSXnzZ3PAriYZHh4e3kneruN+FmxepMhleMDDw8O7mvd5Fx4eHh4eHh4e3g2uL8PINQChj/HDAAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/RocketMQ/">RocketMQ</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/XBin-Store/">XBin-Store</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七)&url=http://binux.cn//2017/03/07/RocketMQ-Cluster-Install/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://binux.cn//2017/03/07/RocketMQ-Cluster-Install/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Binux Blog&title=Xbin-Store(分布式商城)项目所用Linux服务系列 RocketMQ集群安装(七)&summary=一名正在崛起的Java后端工程师&pics=http://binux.cnhttp://on2bs9q7q.bkt.clouddn.com/avatar.png&url=http://binux.cn/2017/03/07/RocketMQ-Cluster-Install/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>“这篇文章将介绍如何安装Solr集群,如何对Solr集群集群进行操作,以及使用Java客户端进行操作!”</p>
+</blockquote>
+<h2 id="系列"><a href="#系列" class="headerlink" title="系列"></a>系列</h2><ul>
+<li><a href="http://binux.cn/2017/03/01/Linux-MySQL-Install/">Xbin-Store(分布式商城)项目所用Linux服务系列 MySQL安装(一)</a></li>
+<li><a href="http://binux.cn/2017/03/03/Redis-Cluster-Install/">Xbin-Store(分布式商城)项目所用Linux服务系列 Redis集群安装(二)</a></li>
+<li><a href="http://binux.cn/2017/03/04/Zookeeper-Cluster-Install/">Xbin-Store(分布式商城)项目所用Linux服务系列 Zookeeper集群安装(三)</a></li>
+<li><a href="http://binux.cn/2017/03/04/Nginx-Install/">Xbin-Store(分布式商城)项目所用Linux服务系列 Nginx安装(四)</a></li>
+<li><a href="http://binux.cn/2017/03/05/FastDFS-Install/">Xbin-Store(分布式商城)项目所用Linux服务系列 FastDFS安装(五)</a></li>
+<li><a href="http://binux.cn/2017/03/06/Solr-Cluster-Install/">Xbin-Store(分布式商城)项目所依赖的Linux服务系列 Solr集群安装(六)</a></li>
+<li><strong><a href="http://binux.cn/2017/03/07/RocketMQ-Cluster-Install/">Xbin-Store(分布式商城)项目所依赖的Linux服务系列 RocketMQ集群安装(七)</a></strong></li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="所用虚拟机"><a href="#所用虚拟机" class="headerlink" title="所用虚拟机"></a>所用虚拟机</h3><p>CentOS 6.5 * 4</p>
+<p>RocketMQ 版本3.2.6</p>
+<p>模式: 多Master多Slave模式，异步复制</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">IP</th>
+<th style="text-align:center">用户名</th>
+<th style="text-align:center">密码</th>
+<th style="text-align:center">角色</th>
+<th style="text-align:center">模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">192.168.1.1</td>
+<td style="text-align:center">root</td>
+<td style="text-align:center"><strong>*</strong></td>
+<td style="text-align:center">nameServer1,broker-a</td>
+<td style="text-align:center">Master1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">192.168.1.2</td>
+<td style="text-align:center">root</td>
+<td style="text-align:center"><strong>*</strong></td>
+<td style="text-align:center">nameServer2,broker-b</td>
+<td style="text-align:center">Master2</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">192.168.1.3</td>
+<td style="text-align:center">root</td>
+<td style="text-align:center"><strong>*</strong></td>
+<td style="text-align:center">nameServer3,broker-a-s</td>
+<td style="text-align:center">Slave1</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">192.168.1.4</td>
+<td style="text-align:center">root</td>
+<td style="text-align:center"><strong>*</strong></td>
+<td style="text-align:center">nameServer4,broker-b-s</td>
+<td style="text-align:center">Slave2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h3><ul>
+<li><a href="http://download.csdn.net/detail/cynicismsrs/9773419" target="_blank" rel="external">alibaba-rocketmq-3.2.6.tar.gz</a></li>
+<li><a href="https://github.com/JoeyFan/rocketmq-console" target="_blank" rel="external">rocketmq-console</a></li>
+</ul>
+<hr>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装-4台同时"><a href="#安装-4台同时" class="headerlink" title="安装(4台同时)"></a>安装(4台同时)</h3><h4 id="安装JDK-略"><a href="#安装JDK-略" class="headerlink" title="安装JDK 略"></a>安装JDK 略</h4><h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf alibaba-rocketmq-3.2.6.tar.gz -C /usr/local
+<span class="token function">cd</span> /usr/local
+<span class="token function">ln</span> -s alibaba-rocketmq rocketmq
+</code></pre>
+<h4 id="创建存储路径"><a href="#创建存储路径" class="headerlink" title="创建存储路径"></a>创建存储路径</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> /usr/local/rocketmq/store
+<span class="token function">mkdir</span> /usr/local/rocketmq/store/commitlog
+<span class="token function">mkdir</span> /usr/local/rocketmq/store/consumequeue
+<span class="token function">mkdir</span> /usr/local/rocketmq/store/index
+</code></pre>
+<h4 id="配置RocketMQ配置文件"><a href="#配置RocketMQ配置文件" class="headerlink" title="配置RocketMQ配置文件"></a>配置RocketMQ配置文件</h4><pre class=" language-bash"><code class="language-bash">vim /usr/local/rocketmq/conf/2m-2s-async/broker-a.properties
+vim /usr/local/rocketmq/conf/2m-2s-async/broker-b.properties
+vim /usr/local/rocketmq/conf/2m-2s-async/broker-a-s.properties
+vim /usr/local/rocketmq/conf/2m-2s-async/broker-b-s.properties
+</code></pre>
+<h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#所属集群名字 （注意不要有空格）</span>
+brokerClusterName<span class="token operator">=</span>rocketmq-cluster
+<span class="token comment" spellcheck="true">#broker名字，注意此处不同的配置文件填写的不一样 192.168.1.1/192.168.1.3 填broker-a 192.168.1.2/192.168.1.4 填broker-b</span>
+brokerName<span class="token operator">=</span><span class="token punctuation">(</span>broker-a<span class="token operator">|</span>broker-b<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#0 表示 Master，>0 表示 Slave  192.168.1.1/192.168.1.2 填0 192.168.1.3/192.168.1.4 填1</span>
+brokerId<span class="token operator">=</span>0
+<span class="token comment" spellcheck="true">#本机IP 默认识别 多块网卡会导致识别错误</span>
+brokerIP1<span class="token operator">=</span>本机IP
+<span class="token comment" spellcheck="true">#nameServer地址，分号分割</span>
+namesrvAddr<span class="token operator">=</span>192.168.1.1:9876<span class="token punctuation">;</span>192.168.1.2:9876<span class="token punctuation">;</span>192.168.1.3:9876<span class="token punctuation">;</span>192.168.1.4:9876
+<span class="token comment" spellcheck="true">#在发送消息时，自动创建服务器不存在的topic，默认创建的队列数</span>
+defaultTopicQueueNums<span class="token operator">=</span>4
+<span class="token comment" spellcheck="true">#是否允许 Broker 自动创建Topic，建议线下开启，线上关闭</span>
+autoCreateTopicEnable<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true">#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭</span>
+autoCreateSubscriptionGroup<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true">#Broker 对外服务的监听端口</span>
+listenPort<span class="token operator">=</span>10911
+<span class="token comment" spellcheck="true">#删除文件时间点，默认凌晨 4点</span>
+deleteWhen<span class="token operator">=</span>04
+<span class="token comment" spellcheck="true">#文件保留时间，默认 48 小时</span>
+fileReservedTime<span class="token operator">=</span>120
+<span class="token comment" spellcheck="true">#commitLog每个文件的大小默认1G</span>
+mapedFileSizeCommitLog<span class="token operator">=</span>1073741824
+<span class="token comment" spellcheck="true">#ConsumeQueue每个文件默认存30W条，根据业务情况调整</span>
+mapedFileSizeConsumeQueue<span class="token operator">=</span>300000
+<span class="token comment" spellcheck="true">#destroyMapedFileIntervalForcibly=120000</span>
+<span class="token comment" spellcheck="true">#redeleteHangedFileInterval=120000</span>
+<span class="token comment" spellcheck="true">#检测物理文件磁盘空间</span>
+diskMaxUsedSpaceRatio<span class="token operator">=</span>88
+
+<span class="token comment" spellcheck="true">#存储路径</span>
+storePathRootDir<span class="token operator">=</span>/usr/local/rocketmq/store
+<span class="token comment" spellcheck="true">#commitLog 存储路径</span>
+storePathCommitLog<span class="token operator">=</span>/usr/local/rocketmq/store/commitlog
+<span class="token comment" spellcheck="true">#消费队列存储路径存储路径</span>
+storePathConsumeQueue<span class="token operator">=</span>/usr/local/rocketmq/store/consumequeue
+<span class="token comment" spellcheck="true">#消息索引存储路径</span>
+storePathIndex<span class="token operator">=</span>/usr/local/rocketmq/store/index
+<span class="token comment" spellcheck="true">#checkpoint 文件存储路径</span>
+storeCheckpoint<span class="token operator">=</span>/usr/local/rocketmq/store/checkpoint
+<span class="token comment" spellcheck="true">#abort 文件存储路径</span>
+abortFile<span class="token operator">=</span>/usr/local/rocketmq/store/abort
+<span class="token comment" spellcheck="true">#限制的消息大小</span>
+maxMessageSize<span class="token operator">=</span>65536
+
+<span class="token comment" spellcheck="true">#flushCommitLogLeastPages=4</span>
+<span class="token comment" spellcheck="true">#flushConsumeQueueLeastPages=2</span>
+<span class="token comment" spellcheck="true">#flushCommitLogThoroughInterval=10000</span>
+<span class="token comment" spellcheck="true">#flushConsumeQueueThoroughInterval=60000</span>
+
+<span class="token comment" spellcheck="true">#Broker 的角色  192.168.1.1/192.168.1.2 填ASYNC_MASTER 192.168.1.3/192.168.1.4 填SLAVE</span>
+<span class="token comment" spellcheck="true">#- ASYNC_MASTER 异步复制Master</span>
+<span class="token comment" spellcheck="true">#- SYNC_MASTER 同步双写Master</span>
+<span class="token comment" spellcheck="true">#- SLAVE</span>
+brokerRole<span class="token operator">=</span>ASYNC_MASTER
+
+<span class="token comment" spellcheck="true">#刷盘方式</span>
+<span class="token comment" spellcheck="true">#- ASYNC_FLUSH 异步刷盘</span>
+<span class="token comment" spellcheck="true">#- SYNC_FLUSH 同步刷盘</span>
+flushDiskType<span class="token operator">=</span>ASYNC_FLUSH
+
+<span class="token comment" spellcheck="true">#checkTransactionMessageEnable=false</span>
+<span class="token comment" spellcheck="true">#发消息线程池数量</span>
+<span class="token comment" spellcheck="true">#sendMessageThreadPoolNums=128</span>
+<span class="token comment" spellcheck="true">#拉消息线程池数量</span>
+<span class="token comment" spellcheck="true">#pullMessageThreadPoolNums=128</span>
+<span class="token comment" spellcheck="true">#filterNums</span>
+<span class="token comment" spellcheck="true">#filterServerNums=1</span>
+</code></pre>
+<h4 id="修改日志配置文件"><a href="#修改日志配置文件" class="headerlink" title="修改日志配置文件"></a>修改日志配置文件</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /usr/local/rocketmq/logs
+<span class="token function">cd</span> /usr/local/rocketmq/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> -i <span class="token string">'s#<span class="token variable">${user.home}</span>#/usr/local/rocketmq#g'</span> *.xml
+</code></pre>
+<h4 id="修改启动脚本参数（测试时虚拟机内存不够修改）"><a href="#修改启动脚本参数（测试时虚拟机内存不够修改）" class="headerlink" title="修改启动脚本参数（测试时虚拟机内存不够修改）"></a>修改启动脚本参数（测试时虚拟机内存不够修改）</h4><pre class=" language-bash"><code class="language-bash">vim /usr/local/rocketmq/bin/runbroker.sh
+JAVA_OPT<span class="token operator">=</span><span class="token string">"<span class="token variable">${JAVA_OPT}</span> -server -Xms1g -Xmx1g -Xmn512m - XX:PermSize=128m -XX:MaxPermSize=320m"</span>
+
+vim /usr/local/rocketmq/bin/runserver.sh
+JAVA_OPT<span class="token operator">=</span><span class="token string">"<span class="token variable">${JAVA_OPT}</span> -server -Xms1g -Xmx1g -Xmn512m - XX:PermSize=128m -XX:MaxPermSize=320m"</span>
+</code></pre>
+<h4 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h4><p>nohup sh /usr/local/rocketmq/bin/mqnamesrv &amp;</p>
+<h5 id="查看是否启动成功"><a href="#查看是否启动成功" class="headerlink" title="查看是否启动成功"></a>查看是否启动成功</h5><p>tail -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/namesrv.log</p>
+<h4 id="启动BrokerServer-多Master多Slave模式，异步复制"><a href="#启动BrokerServer-多Master多Slave模式，异步复制" class="headerlink" title="启动BrokerServer 多Master多Slave模式，异步复制"></a>启动BrokerServer 多Master多Slave模式，异步复制</h4><blockquote>
+<p>A -192.168.1.1|B-192.168.1.2|C-192.168.1.3|B-192.168.1.4</p>
+</blockquote>
+<p>启动命令:</p>
+<pre class=" language-bash"><code class="language-bash">A:
+<span class="token function">cd</span> /usr/local/rocketmq/bin
+<span class="token function">nohup</span> sh /usr/local/rocketmq/bin/mqbroker -c /usr/local/rocketmq/conf/2m-2s-async/broker-a.properties <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+//查看是否启动成功
+<span class="token function">netstat</span> -ntlp
+jps
+// 查看日志
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/broker.log
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/namesrv.log
+
+B:
+<span class="token function">cd</span> /usr/local/rocketmq/bin
+<span class="token function">nohup</span> sh /usr/local/rocketmq/bin/mqbroker -c /usr/local/rocketmq/conf/2m-2s-async/broker-b.properties <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+//查看是否启动成功
+<span class="token function">netstat</span> -ntlp
+jps
+// 查看日志
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/broker.log
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/namesrv.log
+
+C:
+<span class="token function">cd</span> /usr/local/rocketmq/bin
+<span class="token function">nohup</span> sh /usr/local/rocketmq/bin/mqbroker -c /usr/local/rocketmq/conf/2m-2s-async/broker-a-s.properties <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+//查看是否启动成功
+<span class="token function">netstat</span> -ntlp
+jps
+// 查看日志
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/broker.log
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/namesrv.log
+
+D:
+<span class="token function">cd</span> /usr/local/rocketmq/bin
+<span class="token function">nohup</span> sh /usr/local/rocketmq/bin/mqbroker -c /usr/local/rocketmq/conf/2m-2s-async/broker-b-s.properties <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+//查看是否启动成功
+<span class="token function">netstat</span> -ntlp
+jps
+// 查看日志
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/broker.log
+<span class="token function">tail</span> -f -n 500 /usr/local/rocketmq/logs/rocketmqlogs/namesrv.log
+</code></pre>
+<h4 id="安装Tomcat配置RocketMQ-Console"><a href="#安装Tomcat配置RocketMQ-Console" class="headerlink" title="安装Tomcat配置RocketMQ Console"></a>安装Tomcat配置RocketMQ Console</h4><p>复制rocketmq-console.war到192.168.1.1机器的/usr/local/tomcat/webapps/下</p>
+<p>vim /usr/local/tomcat/webapps/rocketmq-console/WEB-INF/classes/config.properties</p>
+<p>rocketmq.namesrv.addr=192.168.1.1:9876;192.168.1.2:9876;192.168.1.3:9876;192.168.1.4:9876</p>
+<h5 id="启动："><a href="#启动：" class="headerlink" title="启动："></a>启动：</h5><p>/usr/local/tomcat/bin/startup.sh</p>
+<h4 id="防火墙配置："><a href="#防火墙配置：" class="headerlink" title="防火墙配置："></a>防火墙配置：</h4><p>vim /etc/sysconfig/iptables</p>
+<pre class=" language-bash"><code class="language-bash">-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 9876 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 10911 -j ACCEPT
+</code></pre>
+<p>重启防火墙</p>
+<p>service iptables restart</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然RocketMQ开源的是被阉割版 但是现在项目已经捐献给Apache了 现在已经发布了4.0 相信这款消息中间件以后一定会大放光彩</p>
+<hr>
+<h2 id="著作权声明"><a href="#著作权声明" class="headerlink" title="著作权声明"></a>著作权声明</h2><p>本文首次发布于 <a href="http://binux.cn">Binux Blog</a>，转载请保留以上链接</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+    <!-- 使用 changyan -->
+    <div id="changyan-comment">
+        <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/03/07/RocketMQ-Cluster-Install/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt0kNDsK';
+var conf = 'prod_6019a9b89b227a35c3c85c9c2a8ac75e';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+    </div>
+    <style>
+        #changyan-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/03/09/ArrayList-Source-Code/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/06/Solr-Cluster-Install/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(http://on2bs9q7q.bkt.clouddn.com/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="http://on2bs9q7q.bkt.clouddn.com/avatar.jpg" alt="Binux's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        xu.binux@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="Mailto:xu.binux@gmail.com?Subject=网友来信（来自博客）" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Bug/">Bug<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/安装教程/">安装教程<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/工具/">工具<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码分析/">源码分析<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/随记/">随记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About ME">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About ME
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/portfolio" title="Portfolio">
+                
+                    <i class="material-icons sidebar-material-icons">reorder</i>
+                
+                Portfolio
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="Gallery">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                Gallery
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">people</i>
+                
+                Links
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">23</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/xubin0830" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.svg);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/xubinux" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.svg);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/binux-29/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.svg);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Binux Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script src="/js/smoothscroll.js"></script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <!-- 畅言公共 js 代码 start -->
+		<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt0kNDsK">
+</script>
+    <!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
